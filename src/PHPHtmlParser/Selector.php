@@ -169,10 +169,8 @@ class Selector
     protected function seek(array $nodes, array $rule, array $options)
     {
         // XPath index
-        if ($rule['tag'] instanceof Countable && 
-            count($rule['tag']) > 0 &&
-            $rule['key'] instanceof Countable &&
-            count($rule['key']) > 0 &&
+        if (!empty($rule['tag']) &&
+            !empty($rule['key']) &&
             is_numeric($rule['key'])
         ) {
             $count = 0;
